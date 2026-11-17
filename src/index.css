@@ -47,25 +47,63 @@
 
 /* Glass and Glow Utilities */
 .glass-panel {
-  background: rgba(16, 19, 27, 0.7);
+  background: rgba(12, 14, 20, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.glass-panel-subtle {
+  background: rgba(18, 21, 30, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-.glass-panel-subtle {
-  background: rgba(23, 27, 36, 0.5);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
 .glow-lime-border {
-  border-color: rgba(212, 255, 50, 0.4);
-  box-shadow: 0 0 15px -3px rgba(212, 255, 50, 0.2);
+  border-color: rgba(215, 255, 53, 0.5);
+  box-shadow: 0 0 20px -3px rgba(215, 255, 53, 0.3);
 }
 
 .glow-cobalt-border {
-  border-color: rgba(37, 99, 235, 0.4);
-  box-shadow: 0 0 20px -3px rgba(37, 99, 235, 0.25);
+  border-color: rgba(67, 139, 255, 0.5);
+  box-shadow: 0 0 25px -3px rgba(67, 139, 255, 0.35);
+}
+
+/* Standardized Button System */
+.btn-primary {
+  background-color: #D7FF35;
+  color: #000000;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  border-radius: 9999px;
+  box-shadow: 0 0 25px -4px rgba(215, 255, 53, 0.45);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-primary:hover {
+  background-color: #e4ff6b;
+  box-shadow: 0 0 35px -2px rgba(215, 255, 53, 0.65);
+  transform: translateY(-1px);
+}
+.btn-primary:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+.btn-secondary {
+  background-color: #0D1017;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.7);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-secondary:hover {
+  background-color: #171B26;
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+.btn-secondary:active {
+  transform: translateY(0px) scale(0.98);
 }

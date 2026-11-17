@@ -122,7 +122,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
   };
 
   return (
-    <section className="relative w-full min-h-[calc(100dvh-3.5rem)] xl:h-[calc(100dvh-3.5rem)] xl:max-h-[calc(100dvh-3.5rem)] flex flex-col justify-between items-center px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4 pb-4 sm:pb-5 bg-black select-none">
+    <section className="relative w-full min-h-[calc(100dvh-4.75rem)] lg:h-[calc(100dvh-4.75rem)] lg:max-h-[calc(100dvh-4.75rem)] flex flex-col justify-between items-center px-4 sm:px-6 lg:px-8 pt-2 sm:pt-3 pb-3 sm:pb-4 bg-black select-none">
       
       {/* ========================================================================= */}
       {/* 1. CINEMATIC VIDEO BACKGROUND */}
@@ -275,21 +275,22 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
         </p>
 
         {/* 6. CALL TO ACTION BUTTONS */}
-        <div className="mt-5 sm:mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
-          {/* Primary CTA */}
+        <div className="mt-5 sm:mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
+          {/* Primary CTA — 100% Solid Electric-Lime, High Contrast */}
           <button
             onClick={onEnterLab}
-            className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-lime hover:bg-[#e4ff6b] text-black font-sans font-bold text-xs sm:text-sm tracking-tight shadow-[0_0_30px_-4px_rgba(215,255,53,0.45)] hover:shadow-[0_0_40px_-2px_rgba(215,255,53,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 group"
+            className="w-full sm:w-auto h-12 sm:h-13 px-7 sm:px-9 rounded-full bg-[#D7FF35] hover:bg-[#e6ff66] text-[#000000] font-sans font-black text-xs sm:text-sm tracking-tight shadow-[0_0_35px_-4px_rgba(215,255,53,0.55),0_2px_4px_rgba(0,0,0,0.4)] hover:shadow-[0_0_45px_-2px_rgba(215,255,53,0.75)] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2.5 group"
           >
             <span>ENTER TRANSFORMATION ARENA</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="w-4 h-4 text-black transition-transform group-hover:translate-x-1 stroke-[2.5]" />
           </button>
 
-          {/* Secondary CTA */}
+          {/* Secondary CTA — Opaque Dark Surface with Crisp Contrast */}
           <button
             onClick={onExploreStyles}
-            className="w-full sm:w-auto px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] backdrop-blur-md border border-white/15 hover:border-white/30 text-white font-sans font-semibold text-xs sm:text-sm tracking-tight transition-all flex items-center justify-center gap-2"
+            className="w-full sm:w-auto h-12 sm:h-13 px-6 sm:px-8 rounded-full bg-[#0D1017] hover:bg-[#181D2A] border border-white/20 hover:border-white/40 text-white font-sans font-bold text-xs sm:text-sm tracking-tight shadow-[0_10px_25px_-5px_rgba(0,0,0,0.8)] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2.5"
           >
+            <Layers className="w-4 h-4 text-zinc-400" />
             <span>EXPLORE 28 VISUAL LANGUAGES</span>
           </button>
         </div>

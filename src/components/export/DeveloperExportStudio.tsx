@@ -88,15 +88,15 @@ module.exports = {
         </div>
 
         {/* Package Manager Toggle */}
-        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-midnight-900 border border-white/10 text-xs font-mono">
+        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-[#0D1017] border border-white/10 text-xs font-mono">
           {(['npm', 'pnpm', 'yarn', 'bun'] as const).map((pm) => (
             <button
               key={pm}
               onClick={() => setPackageManager(pm)}
-              className={`px-3 py-1.5 rounded-lg transition-colors uppercase ${
+              className={`px-3.5 py-1.5 rounded-lg transition-all uppercase ${
                 packageManager === pm
-                  ? 'bg-lime-electric text-midnight-950 font-bold'
-                  : 'text-midnight-400 hover:text-white'
+                  ? 'bg-lime text-black font-bold shadow-sm'
+                  : 'text-zinc-400 hover:text-white hover:bg-white/5'
               }`}
             >
               {pm}

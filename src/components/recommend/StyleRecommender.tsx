@@ -260,18 +260,18 @@ export const StyleRecommender: React.FC<StyleRecommenderProps> = ({
                 <div className="pt-4 border-t border-white/5 flex items-center justify-between gap-2">
                   <button
                     onClick={() => onOpenPromptForgeWithStyle(rec.styleId)}
-                    className="text-xs text-midnight-300 hover:text-white font-mono flex items-center gap-1"
+                    className="text-xs text-zinc-300 hover:text-white font-mono flex items-center gap-1.5 py-1.5 px-3 rounded-full hover:bg-white/5 transition-colors"
                   >
-                    <Sliders className="w-3.5 h-3.5 text-lime-electric" />
+                    <Sliders className="w-3.5 h-3.5 text-lime" />
                     <span>Forge Prompt</span>
                   </button>
 
                   <button
                     onClick={() => onSelectStyleForArena(rec.styleId)}
-                    className="px-3.5 py-1.5 rounded-lg bg-lime-electric hover:bg-lime-glow text-midnight-950 text-xs font-display font-bold shadow-lime-glow flex items-center gap-1 transition-all"
+                    className="px-4 py-2 rounded-full bg-lime hover:bg-[#e4ff6b] text-black text-xs font-sans font-bold shadow-[0_0_20px_-3px_rgba(215,255,53,0.35)] flex items-center gap-1.5 transition-all"
                   >
                     <span>Launch in Arena</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-black" />
                   </button>
                 </div>
               </div>

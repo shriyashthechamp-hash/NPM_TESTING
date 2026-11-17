@@ -97,37 +97,37 @@ export const TransformationArena: React.FC<TransformationArenaProps> = ({
   }[viewport];
 
   return (
-    <div className="min-h-screen bg-midnight-950 text-midnight-100 flex flex-col">
+    <div className="min-h-screen bg-black text-white flex flex-col font-sans">
       {/* Workspace Top Command Bar */}
-      <div className="border-b border-white/5 bg-midnight-900/80 px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-4">
+      <div className="border-b border-white/[0.08] bg-[#0A0D14]/90 backdrop-blur-xl px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-4">
         {/* Left: Section identifier */}
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-lime-electric/15 border border-lime-electric/30 flex items-center justify-center">
-            <Sparkles className="w-4 h-4 text-lime-electric" />
+          <div className="w-8 h-8 rounded-lg bg-lime/15 border border-lime/30 flex items-center justify-center">
+            <Sparkles className="w-4 h-4 text-lime" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="font-display font-extrabold text-sm sm:text-base text-white tracking-tight">
+              <h1 className="font-sans font-black text-sm sm:text-base text-white tracking-tight">
                 Transformation Arena
               </h1>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-lime-electric/20 text-lime-electric border border-lime-electric/30 font-bold uppercase">
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-lime/20 text-lime border border-lime/30 font-bold uppercase tracking-wider">
                 Active Engine
               </span>
             </div>
-            <p className="text-xs text-midnight-400">Transform the same reference interface across 28 distinct design languages</p>
+            <p className="text-xs text-zinc-400">Transform the same reference interface across 28 distinct design languages</p>
           </div>
         </div>
 
         {/* Center: Reference App Switcher */}
-        <div className="flex items-center gap-1.5 bg-midnight-950 p-1 rounded-xl border border-white/10 overflow-x-auto max-w-full">
+        <div className="flex items-center gap-1.5 bg-black/60 p-1.5 rounded-2xl border border-white/10 overflow-x-auto max-w-full">
           {REFERENCE_APPS.map((app) => (
             <button
               key={app.id}
               onClick={() => setSelectedAppId(app.id)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
                 selectedAppId === app.id
-                  ? 'bg-midnight-800 text-lime-electric font-bold border border-lime-electric/30 shadow-sm'
-                  : 'text-midnight-400 hover:text-white hover:bg-white/5'
+                  ? 'bg-lime text-black font-bold shadow-sm'
+                  : 'text-zinc-400 hover:text-white hover:bg-white/5'
               }`}
             >
               {app.title.split(' ')[0]} {app.title.split(' ')[1]}
@@ -140,10 +140,10 @@ export const TransformationArena: React.FC<TransformationArenaProps> = ({
           {/* Comparison Mode Toggle */}
           <button
             onClick={() => setComparisonMode(!comparisonMode)}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono flex items-center gap-1.5 transition-all border ${
+            className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium flex items-center gap-1.5 transition-all border ${
               comparisonMode
-                ? 'bg-cobalt-bright/20 border-cobalt-glow text-cobalt-glow'
-                : 'bg-midnight-900 border-white/10 text-midnight-300 hover:text-white'
+                ? 'bg-cobalt/25 border-cobalt-glow text-cobalt-glow shadow-sm'
+                : 'bg-[#0D1017] border-white/15 text-zinc-300 hover:text-white hover:border-white/30'
             }`}
           >
             <SplitSquareVertical className="w-3.5 h-3.5" />
@@ -151,11 +151,11 @@ export const TransformationArena: React.FC<TransformationArenaProps> = ({
           </button>
 
           {/* Viewport Selector */}
-          <div className="flex items-center gap-1 bg-midnight-950 p-1 rounded-lg border border-white/10">
+          <div className="flex items-center gap-1 bg-black/60 p-1 rounded-xl border border-white/10">
             <button
               onClick={() => setViewport('desktop')}
-              className={`p-1.5 rounded text-xs transition-colors ${
-                viewport === 'desktop' ? 'bg-midnight-800 text-white' : 'text-midnight-500 hover:text-white'
+              className={`p-1.5 rounded-lg text-xs transition-colors ${
+                viewport === 'desktop' ? 'bg-white/15 text-white font-bold' : 'text-zinc-500 hover:text-white'
               }`}
               title="Desktop View (100%)"
             >
@@ -163,8 +163,8 @@ export const TransformationArena: React.FC<TransformationArenaProps> = ({
             </button>
             <button
               onClick={() => setViewport('tablet')}
-              className={`p-1.5 rounded text-xs transition-colors ${
-                viewport === 'tablet' ? 'bg-midnight-800 text-white' : 'text-midnight-500 hover:text-white'
+              className={`p-1.5 rounded-lg text-xs transition-colors ${
+                viewport === 'tablet' ? 'bg-white/15 text-white font-bold' : 'text-zinc-500 hover:text-white'
               }`}
               title="Tablet View (768px)"
             >
@@ -172,8 +172,8 @@ export const TransformationArena: React.FC<TransformationArenaProps> = ({
             </button>
             <button
               onClick={() => setViewport('mobile')}
-              className={`p-1.5 rounded text-xs transition-colors ${
-                viewport === 'mobile' ? 'bg-midnight-800 text-white' : 'text-midnight-500 hover:text-white'
+              className={`p-1.5 rounded-lg text-xs transition-colors ${
+                viewport === 'mobile' ? 'bg-white/15 text-white font-bold' : 'text-zinc-500 hover:text-white'
               }`}
               title="Mobile View (390px)"
             >
@@ -508,15 +508,15 @@ export const TransformationArena: React.FC<TransformationArenaProps> = ({
 
             <button
               onClick={handleCopyTokens}
-              className="w-full py-2.5 px-3 rounded-xl bg-midnight-900 hover:bg-midnight-850 border border-white/10 text-xs font-mono text-midnight-200 hover:text-white flex items-center justify-center gap-2 transition-all active:scale-98"
+              className="w-full py-2.5 px-3 rounded-full bg-black/60 hover:bg-black/90 border border-white/15 text-xs font-mono text-zinc-300 hover:text-white flex items-center justify-center gap-2 transition-all active:scale-98"
             >
-              {copiedTokens ? <Check className="w-3.5 h-3.5 text-lime-electric" /> : <Copy className="w-3.5 h-3.5" />}
+              {copiedTokens ? <Check className="w-3.5 h-3.5 text-lime" /> : <Copy className="w-3.5 h-3.5" />}
               <span>{copiedTokens ? 'Tokens Copied!' : `Copy ${tokenViewMode.toUpperCase()} Tokens`}</span>
             </button>
           </div>
 
           {/* Quick Actions */}
-          <div className="pt-2 border-t border-white/10 space-y-2">
+          <div className="pt-3 border-t border-white/10 space-y-2">
             <button
               onClick={() => {
                 if (onOpenPromptForgeWithStyle) {
@@ -525,17 +525,17 @@ export const TransformationArena: React.FC<TransformationArenaProps> = ({
                   setActiveTab('prompt');
                 }
               }}
-              className="w-full py-2.5 px-3 rounded-xl bg-lime-electric hover:bg-lime-glow text-midnight-950 font-display font-bold text-xs flex items-center justify-center gap-2 shadow-lime-glow transition-all active:scale-98"
+              className="w-full py-3 px-4 rounded-full bg-lime hover:bg-[#e4ff6b] text-black font-sans font-bold text-xs flex items-center justify-center gap-2 shadow-[0_0_25px_-3px_rgba(215,255,53,0.4)] transition-all active:scale-98"
             >
-              <Sliders className="w-3.5 h-3.5" />
+              <Sliders className="w-3.5 h-3.5 text-black" />
               <span>Forge AI Prompt with this Style</span>
             </button>
 
             <button
               onClick={() => setActiveTab('dna')}
-              className="w-full py-2 px-3 rounded-xl bg-midnight-900 hover:bg-midnight-850 text-midnight-300 hover:text-white text-xs font-mono flex items-center justify-center gap-2 transition-colors"
+              className="w-full py-2.5 px-4 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 text-zinc-200 hover:text-white text-xs font-mono flex items-center justify-center gap-2 transition-all"
             >
-              <Dna className="w-3.5 h-3.5" />
+              <Dna className="w-3.5 h-3.5 text-lime" />
               <span>Inspect Full DNA Hierarchy</span>
             </button>
           </div>

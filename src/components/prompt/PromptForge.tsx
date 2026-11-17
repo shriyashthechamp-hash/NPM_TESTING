@@ -286,9 +286,9 @@ ${selectedDNA.identity.signatureMoves.map((m) => `- ${m}`).join('\n')}
 
               <button
                 onClick={handleCopy}
-                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-lime-electric text-midnight-950 font-display font-bold text-xs shadow-lime-glow hover:bg-lime-glow transition-all active:scale-95"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-lime text-black font-sans font-bold text-xs shadow-[0_0_20px_-3px_rgba(215,255,53,0.4)] hover:bg-[#e4ff6b] hover:shadow-[0_0_30px_-2px_rgba(215,255,53,0.6)] transition-all active:scale-95"
               >
-                {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                {copied ? <Check className="w-3.5 h-3.5 text-black stroke-[2.5]" /> : <Copy className="w-3.5 h-3.5 text-black" />}
                 <span>{copied ? 'Copied to Clipboard!' : 'Copy Complete Prompt'}</span>
               </button>
             </div>
