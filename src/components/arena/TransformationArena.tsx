@@ -186,31 +186,31 @@ export const TransformationArena: React.FC<TransformationArenaProps> = ({
       {/* Main 3-Panel Workspace Grid */}
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden">
         {/* ================= LEFT PANEL: Catalog & Style Selector ================= */}
-        <aside className="lg:col-span-3 border-r border-white/5 bg-midnight-950 p-4 flex flex-col space-y-4 max-h-[calc(100vh-120px)] overflow-y-auto">
+        <aside className="lg:col-span-3 border-r border-white/10 bg-[#080A08] p-4 flex flex-col space-y-4 max-h-[calc(100vh-120px)] overflow-y-auto">
           {/* Search bar */}
           <div className="relative">
-            <Search className="w-3.5 h-3.5 text-midnight-500 absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-3.5 h-3.5 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search 28 styles..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 text-xs rounded-xl bg-midnight-900 border border-white/10 text-white placeholder-midnight-500 focus:outline-none focus:border-lime-electric/50 transition-colors"
+              className="w-full pl-9 pr-3 py-2 text-xs rounded-xl bg-[#12151E] border border-white/15 text-white placeholder-zinc-500 focus:outline-none focus:border-[#D7FF35]/70 transition-colors"
             />
           </div>
 
           {/* Family Filters */}
           <div className="space-y-1">
-            <div className="text-[11px] font-mono text-midnight-500 uppercase tracking-wider px-1">
+            <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider px-1">
               Design Family
             </div>
             <div className="flex flex-wrap gap-1">
               <button
                 onClick={() => setSelectedFamily('all')}
-                className={`px-2 py-1 rounded text-[11px] font-mono transition-colors ${
+                className={`px-2.5 py-1 rounded-lg text-[11px] font-mono transition-all ${
                   selectedFamily === 'all'
-                    ? 'bg-lime-electric text-midnight-950 font-bold'
-                    : 'bg-midnight-900 text-midnight-400 hover:text-white'
+                    ? 'bg-[#D7FF35] text-[#080A08] font-bold shadow-sm'
+                    : 'bg-[#12151E] text-zinc-300 hover:text-white border border-white/10'
                 }`}
               >
                 All (28)
@@ -219,10 +219,10 @@ export const TransformationArena: React.FC<TransformationArenaProps> = ({
                 <button
                   key={family.id}
                   onClick={() => setSelectedFamily(family.id)}
-                  className={`px-2 py-1 rounded text-[11px] font-mono transition-colors ${
+                  className={`px-2.5 py-1 rounded-lg text-[11px] font-mono transition-all ${
                     selectedFamily === family.id
-                      ? 'bg-lime-electric text-midnight-950 font-bold'
-                      : 'bg-midnight-900 text-midnight-400 hover:text-white'
+                      ? 'bg-[#D7FF35] text-[#080A08] font-bold shadow-sm'
+                      : 'bg-[#12151E] text-zinc-300 hover:text-white border border-white/10'
                   }`}
                 >
                   {family.name.split(' ')[0]}
@@ -236,12 +236,12 @@ export const TransformationArena: React.FC<TransformationArenaProps> = ({
             <div className="p-3 rounded-xl bg-cobalt-electric/10 border border-cobalt-bright/30 space-y-2">
               <div className="text-[11px] font-mono text-cobalt-glow uppercase font-bold flex items-center justify-between">
                 <span>Secondary Comparison Style</span>
-                <span className="text-[10px] text-midnight-400">Right Pane</span>
+                <span className="text-[10px] text-zinc-400">Right Pane</span>
               </div>
               <select
                 value={secondaryStyleId}
                 onChange={(e) => setSecondaryStyleId(e.target.value)}
-                className="w-full bg-midnight-900 border border-white/10 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-cobalt-glow"
+                className="w-full bg-[#12151E] border border-white/15 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-cobalt-glow"
               >
                 {ALL_STYLES.map((s) => (
                   <option key={s.id} value={s.id}>
@@ -254,13 +254,12 @@ export const TransformationArena: React.FC<TransformationArenaProps> = ({
 
           {/* Style list */}
           <div className="flex-1 space-y-1.5">
-            <div className="text-[11px] font-mono text-midnight-500 uppercase tracking-wider px-1 mb-2">
+            <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider px-1 mb-2">
               Select Primary Style ({filteredStyles.length})
             </div>
 
             {filteredStyles.map((style) => {
               const isSelected = primaryStyleId === style.id;
-              const isImplemented = style.maturity === 'IMPLEMENTED' || style.maturity === 'VALIDATED';
 
               return (
                 <button
@@ -268,8 +267,8 @@ export const TransformationArena: React.FC<TransformationArenaProps> = ({
                   onClick={() => setPrimaryStyleId(style.id)}
                   className={`w-full text-left p-3 rounded-xl border transition-all flex items-center justify-between group ${
                     isSelected
-                      ? 'bg-midnight-900 border-lime-electric/60 shadow-lime-glow/20 ring-1 ring-lime-electric/30'
-                      : 'bg-midnight-900/40 border-white/5 hover:border-white/15 hover:bg-midnight-900/80'
+                      ? 'bg-[#12151E] border-[#D7FF35] shadow-[0_0_15px_-3px_rgba(215,255,53,0.3)] ring-1 ring-[#D7FF35]/50'
+                      : 'bg-[#0D1017] border-white/10 hover:border-white/20 hover:bg-[#12151E]'
                   }`}
                 >
                   <div className="space-y-1">
@@ -278,11 +277,11 @@ export const TransformationArena: React.FC<TransformationArenaProps> = ({
                         className="w-2.5 h-2.5 rounded-full border border-white/20"
                         style={{ backgroundColor: style.color.seed.primary }}
                       />
-                      <span className={`text-xs font-display font-bold ${isSelected ? 'text-lime-electric' : 'text-white'}`}>
+                      <span className={`text-xs font-sans font-bold ${isSelected ? 'text-[#D7FF35]' : 'text-white'}`}>
                         {style.name}
                       </span>
                     </div>
-                    <div className="text-[10px] text-midnight-400 line-clamp-1">
+                    <div className="text-[10px] text-zinc-400 line-clamp-1">
                       {style.identity.tagline}
                     </div>
                   </div>
@@ -290,10 +289,10 @@ export const TransformationArena: React.FC<TransformationArenaProps> = ({
                   <span
                     className={`text-[9px] font-mono px-1.5 py-0.5 rounded font-bold uppercase ${
                       style.maturity === 'VALIDATED'
-                        ? 'bg-lime-electric/15 text-lime-electric border border-lime-electric/30'
+                        ? 'bg-[#D7FF35]/20 text-[#D7FF35] border border-[#D7FF35]/40'
                         : style.maturity === 'IMPLEMENTED'
                         ? 'bg-cobalt-bright/15 text-cobalt-glow border border-cobalt-bright/30'
-                        : 'bg-white/5 text-midnight-500 border border-white/5'
+                        : 'bg-white/5 text-zinc-400 border border-white/10'
                     }`}
                   >
                     {style.maturity}
@@ -479,26 +478,26 @@ export const TransformationArena: React.FC<TransformationArenaProps> = ({
           {/* Live Token Inspector */}
           <div className="space-y-2 flex-1 flex flex-col">
             <div className="flex items-center justify-between">
-              <span className="text-[11px] font-mono text-midnight-500 uppercase tracking-wider">
+              <span className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider">
                 Live Token Compiler
               </span>
               <div className="flex items-center gap-1 text-[10px] font-mono">
                 <button
                   onClick={() => setTokenViewMode('css')}
-                  className={`px-1.5 py-0.5 rounded ${tokenViewMode === 'css' ? 'bg-lime-electric text-midnight-950 font-bold' : 'text-midnight-400'}`}
+                  className={`px-2 py-0.5 rounded ${tokenViewMode === 'css' ? 'bg-[#D7FF35] text-[#080A08] font-bold shadow-sm' : 'text-zinc-400 hover:text-white'}`}
                 >
                   CSS
                 </button>
                 <button
                   onClick={() => setTokenViewMode('ts')}
-                  className={`px-1.5 py-0.5 rounded ${tokenViewMode === 'ts' ? 'bg-lime-electric text-midnight-950 font-bold' : 'text-midnight-400'}`}
+                  className={`px-2 py-0.5 rounded ${tokenViewMode === 'ts' ? 'bg-[#D7FF35] text-[#080A08] font-bold shadow-sm' : 'text-zinc-400 hover:text-white'}`}
                 >
                   TS
                 </button>
               </div>
             </div>
 
-            <div className="relative rounded-xl bg-midnight-900 border border-white/10 p-3 font-mono text-[11px] text-midnight-300 max-h-48 overflow-y-auto">
+            <div className="relative rounded-xl bg-[#0D1017] border border-white/10 p-3 font-mono text-[11px] text-zinc-300 max-h-48 overflow-y-auto">
               <pre>
                 {tokenViewMode === 'css'
                   ? primaryStylePkg.rawCss.slice(0, 500) + '\n/* ... +28 tokens */'
@@ -508,15 +507,15 @@ export const TransformationArena: React.FC<TransformationArenaProps> = ({
 
             <button
               onClick={handleCopyTokens}
-              className="w-full py-2.5 px-3 rounded-full bg-black/60 hover:bg-black/90 border border-white/15 text-xs font-mono text-zinc-300 hover:text-white flex items-center justify-center gap-2 transition-all active:scale-98"
+              className="w-full py-2.5 px-4 rounded-full bg-[#12151E] hover:bg-[#1A1F2C] border border-white/20 text-xs font-mono text-white font-semibold flex items-center justify-center gap-2 transition-all active:scale-98 shadow-sm"
             >
-              {copiedTokens ? <Check className="w-3.5 h-3.5 text-lime" /> : <Copy className="w-3.5 h-3.5" />}
+              {copiedTokens ? <Check className="w-3.5 h-3.5 text-[#D7FF35]" /> : <Copy className="w-3.5 h-3.5 text-zinc-300" />}
               <span>{copiedTokens ? 'Tokens Copied!' : `Copy ${tokenViewMode.toUpperCase()} Tokens`}</span>
             </button>
           </div>
 
-          {/* Quick Actions */}
-          <div className="pt-3 border-t border-white/10 space-y-2">
+          {/* Quick Actions — Wabi-Sabi & All Style Action Buttons with High-Contrast */}
+          <div className="pt-3 border-t border-white/10 space-y-2.5">
             <button
               onClick={() => {
                 if (onOpenPromptForgeWithStyle) {
@@ -525,17 +524,17 @@ export const TransformationArena: React.FC<TransformationArenaProps> = ({
                   setActiveTab('prompt');
                 }
               }}
-              className="w-full py-3 px-4 rounded-full bg-lime hover:bg-[#e4ff6b] text-black font-sans font-bold text-xs flex items-center justify-center gap-2 shadow-[0_0_25px_-3px_rgba(215,255,53,0.4)] transition-all active:scale-98"
+              className="w-full py-3 px-4 rounded-full bg-[#D7FF35] hover:bg-[#e4ff6b] text-[#080A08] font-sans font-black text-xs flex items-center justify-center gap-2 shadow-[0_0_25px_-3px_rgba(215,255,53,0.5)] hover:shadow-[0_0_35px_-2px_rgba(215,255,53,0.7)] hover:scale-[1.01] active:scale-[0.98] transition-all"
             >
-              <Sliders className="w-3.5 h-3.5 text-black" />
+              <Sliders className="w-3.5 h-3.5 text-[#080A08] stroke-[2.5]" />
               <span>Forge AI Prompt with this Style</span>
             </button>
 
             <button
               onClick={() => setActiveTab('dna')}
-              className="w-full py-2.5 px-4 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 text-zinc-200 hover:text-white text-xs font-mono flex items-center justify-center gap-2 transition-all"
+              className="w-full py-3 px-4 rounded-full bg-[#12151E] hover:bg-[#1A1F2C] border border-white/20 hover:border-white/40 text-white font-sans font-bold text-xs flex items-center justify-center gap-2 shadow-sm hover:scale-[1.01] active:scale-[0.98] transition-all"
             >
-              <Dna className="w-3.5 h-3.5 text-lime" />
+              <Dna className="w-3.5 h-3.5 text-[#D7FF35]" />
               <span>Inspect Full DNA Hierarchy</span>
             </button>
           </div>

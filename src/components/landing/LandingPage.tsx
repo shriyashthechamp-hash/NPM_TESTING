@@ -254,10 +254,10 @@ import '@peak_ui/react/tokens/neo-brutalism/tokens.css';
           <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
             <button
               onClick={() => setActiveTab('arena')}
-              className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-lime-electric text-midnight-950 font-display font-bold text-sm shadow-lime-glow hover:bg-lime-glow transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#D7FF35] hover:bg-[#e4ff6b] text-[#080A08] font-sans font-black text-sm shadow-[0_0_25px_-3px_rgba(215,255,53,0.45)] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 group"
             >
               <span>Launch Transformation Arena</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-[#080A08] stroke-[2.5] transition-transform group-hover:translate-x-1" />
             </button>
           </div>
         </div>
@@ -305,9 +305,9 @@ import '@peak_ui/react/tokens/neo-brutalism/tokens.css';
         <div className="mt-12 text-center">
           <button
             onClick={() => setActiveTab('prompt')}
-            className="px-6 py-3 rounded-xl bg-midnight-900 hover:bg-midnight-850 border border-white/15 text-white font-display font-bold text-sm inline-flex items-center gap-2"
+            className="px-7 py-3.5 rounded-full bg-[#12151E] hover:bg-[#1A1F2C] border border-white/20 hover:border-white/40 text-white font-sans font-bold text-sm inline-flex items-center gap-2.5 transition-all shadow-md hover:scale-[1.02] active:scale-[0.98]"
           >
-            <Sliders className="w-4 h-4 text-lime-electric" />
+            <Sliders className="w-4 h-4 text-[#D7FF35]" />
             <span>Open AI Prompt Forge</span>
             <ArrowRight className="w-4 h-4" />
           </button>

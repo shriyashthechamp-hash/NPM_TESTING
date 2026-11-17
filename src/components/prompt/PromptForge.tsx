@@ -143,7 +143,7 @@ ${selectedDNA.identity.signatureMoves.map((m) => `- ${m}`).join('\n')}
         </div>
 
         {/* Assistant Target Switcher */}
-        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-midnight-900 border border-white/10 overflow-x-auto">
+        <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-[#0D1017] border border-white/15 overflow-x-auto">
           {(
             [
               { id: 'claude', label: 'Claude Code' },
@@ -156,10 +156,10 @@ ${selectedDNA.identity.signatureMoves.map((m) => `- ${m}`).join('\n')}
             <button
               key={item.id}
               onClick={() => setAssistant(item.id)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium transition-all ${
                 assistant === item.id
-                  ? 'bg-lime-electric text-midnight-950 font-bold shadow-sm'
-                  : 'text-midnight-400 hover:text-white hover:bg-white/5'
+                  ? 'bg-[#D7FF35] text-[#080A08] font-bold shadow-sm'
+                  : 'text-zinc-300 hover:text-white hover:bg-white/10'
               }`}
             >
               {item.label}
@@ -173,14 +173,14 @@ ${selectedDNA.identity.signatureMoves.map((m) => `- ${m}`).join('\n')}
         {/* Left: Input Criteria Configuration */}
         <div className="lg:col-span-5 space-y-5">
           {/* Style Selector */}
-          <div className="p-5 rounded-2xl bg-midnight-900/60 border border-white/10 space-y-3">
-            <label className="text-xs font-mono text-lime-electric uppercase font-bold block">
+          <div className="p-5 rounded-2xl bg-[#0D1017] border border-white/10 space-y-3">
+            <label className="text-xs font-mono text-[#D7FF35] uppercase font-bold block">
               1. Visual Design Language
             </label>
             <select
               value={styleId}
               onChange={(e) => setStyleId(e.target.value)}
-              className="w-full bg-midnight-950 border border-white/15 rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-lime-electric font-medium"
+              className="w-full bg-[#12151E] border border-white/15 rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-[#D7FF35] font-medium"
             >
               {ALL_STYLES.map((s) => (
                 <option key={s.id} value={s.id}>
@@ -191,8 +191,8 @@ ${selectedDNA.identity.signatureMoves.map((m) => `- ${m}`).join('\n')}
           </div>
 
           {/* Scenario Selector */}
-          <div className="p-5 rounded-2xl bg-midnight-900/60 border border-white/10 space-y-3">
-            <label className="text-xs font-mono text-lime-electric uppercase font-bold block">
+          <div className="p-5 rounded-2xl bg-[#0D1017] border border-white/10 space-y-3">
+            <label className="text-xs font-mono text-[#D7FF35] uppercase font-bold block">
               2. Application Scenario Blueprint
             </label>
             <div className="grid grid-cols-2 gap-1.5">
@@ -204,8 +204,8 @@ ${selectedDNA.identity.signatureMoves.map((m) => `- ${m}`).join('\n')}
                     onClick={() => setScenario(scId)}
                     className={`p-2.5 rounded-xl text-left transition-all border ${
                       scenario === scId
-                        ? 'bg-midnight-800 text-lime-electric border-lime-electric/50 font-bold shadow-sm'
-                        : 'bg-midnight-950 text-midnight-400 border-white/5 hover:border-white/15 hover:text-white'
+                        ? 'bg-[#12151E] text-[#D7FF35] border-[#D7FF35]/70 font-bold shadow-sm'
+                        : 'bg-black/60 text-zinc-400 border-white/10 hover:border-white/20 hover:text-white'
                     }`}
                   >
                     <div className="text-xs font-medium truncate">{spec?.title || scId}</div>

@@ -59,27 +59,27 @@ export const DesignDnaInspector: React.FC = () => {
 
         {/* View Mode Toggle */}
         <div className="flex items-center gap-2">
-          <div className="flex items-center p-1 rounded-xl bg-midnight-900 border border-white/10 text-xs font-mono">
+          <div className="flex items-center p-1 rounded-2xl bg-[#0D1017] border border-white/15 text-xs font-mono">
             <button
               onClick={() => setViewFormat('visual')}
-              className={`px-3 py-1.5 rounded-lg transition-colors ${
-                viewFormat === 'visual' ? 'bg-lime-electric text-midnight-950 font-bold' : 'text-midnight-400 hover:text-white'
+              className={`px-3.5 py-1.5 rounded-xl transition-all ${
+                viewFormat === 'visual' ? 'bg-[#D7FF35] text-[#080A08] font-bold shadow-sm' : 'text-zinc-300 hover:text-white'
               }`}
             >
               Visual Deck
             </button>
             <button
               onClick={() => setViewFormat('css')}
-              className={`px-3 py-1.5 rounded-lg transition-colors ${
-                viewFormat === 'css' ? 'bg-lime-electric text-midnight-950 font-bold' : 'text-midnight-400 hover:text-white'
+              className={`px-3.5 py-1.5 rounded-xl transition-all ${
+                viewFormat === 'css' ? 'bg-[#D7FF35] text-[#080A08] font-bold shadow-sm' : 'text-zinc-300 hover:text-white'
               }`}
             >
               CSS Variables
             </button>
             <button
               onClick={() => setViewFormat('json')}
-              className={`px-3 py-1.5 rounded-lg transition-colors ${
-                viewFormat === 'json' ? 'bg-lime-electric text-midnight-950 font-bold' : 'text-midnight-400 hover:text-white'
+              className={`px-3.5 py-1.5 rounded-xl transition-all ${
+                viewFormat === 'json' ? 'bg-[#D7FF35] text-[#080A08] font-bold shadow-sm' : 'text-zinc-300 hover:text-white'
               }`}
             >
               Full DNA JSON
@@ -90,7 +90,7 @@ export const DesignDnaInspector: React.FC = () => {
 
       {/* Style Switcher Bar */}
       <div className="flex items-center gap-3 overflow-x-auto pb-2">
-        <span className="text-xs font-mono text-midnight-500 uppercase tracking-wider shrink-0">
+        <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider shrink-0">
           Target Language:
         </span>
         <div className="flex items-center gap-2">
@@ -98,10 +98,10 @@ export const DesignDnaInspector: React.FC = () => {
             <button
               key={s.id}
               onClick={() => setSelectedStyleId(s.id)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all border ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition-all border ${
                 selectedStyleId === s.id
-                  ? 'bg-midnight-800 text-lime-electric border-lime-electric/50 font-bold shadow-sm'
-                  : 'bg-midnight-900/60 border-white/5 text-midnight-400 hover:text-white hover:border-white/15'
+                  ? 'bg-[#D7FF35] text-[#080A08] border-[#D7FF35] font-bold shadow-sm'
+                  : 'bg-[#12151E] border-white/10 text-zinc-300 hover:text-white hover:border-white/20'
               }`}
             >
               {s.name}
@@ -323,7 +323,7 @@ export const DesignDnaInspector: React.FC = () => {
             </span>
             <button
               onClick={() => handleCopy(tokenBundle.css)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-midnight-800 hover:bg-midnight-700 text-white transition-colors"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#12151E] hover:bg-[#1A1F2C] border border-white/20 text-white font-medium text-xs transition-colors shadow-sm"
             >
               {copied ? <Check className="w-3.5 h-3.5 text-lime-electric" /> : <Copy className="w-3.5 h-3.5" />}
               <span>{copied ? 'Copied' : 'Copy CSS'}</span>
@@ -344,7 +344,7 @@ export const DesignDnaInspector: React.FC = () => {
             </span>
             <button
               onClick={() => handleCopy(JSON.stringify(dna, null, 2))}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-midnight-800 hover:bg-midnight-700 text-white transition-colors"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#12151E] hover:bg-[#1A1F2C] border border-white/20 text-white font-medium text-xs transition-colors shadow-sm"
             >
               {copied ? <Check className="w-3.5 h-3.5 text-lime-electric" /> : <Copy className="w-3.5 h-3.5" />}
               <span>{copied ? 'Copied' : 'Copy JSON'}</span>

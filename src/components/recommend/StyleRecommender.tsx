@@ -118,7 +118,7 @@ export const StyleRecommender: React.FC<StyleRecommenderProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 border-t border-white/5">
           {/* Brand Positioning */}
           <div className="space-y-2">
-            <span className="text-xs font-mono text-midnight-400 uppercase font-semibold block">
+            <span className="text-xs font-mono text-zinc-400 uppercase font-semibold block">
               Brand Positioning Vector
             </span>
             <div className="flex flex-wrap gap-1.5">
@@ -128,8 +128,8 @@ export const StyleRecommender: React.FC<StyleRecommenderProps> = ({
                   onClick={() => setBrandPositioning(pos)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-mono capitalize transition-all border ${
                     brandPositioning === pos
-                      ? 'bg-lime-electric text-midnight-950 font-bold border-lime-electric'
-                      : 'bg-midnight-950 text-midnight-300 border-white/10 hover:text-white'
+                      ? 'bg-[#D7FF35] text-[#080A08] font-bold border-[#D7FF35] shadow-sm'
+                      : 'bg-[#12151E] text-zinc-300 border-white/10 hover:text-white'
                   }`}
                 >
                   {pos}

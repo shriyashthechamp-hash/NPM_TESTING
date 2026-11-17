@@ -97,12 +97,12 @@ export const WarpCarousel: React.FC<WarpCarouselProps> = ({ onSelectStyle }) => 
 
           {/* Navigation Controls */}
           <div className="flex items-center gap-3 mt-6 md:mt-0">
-            <span className="text-xs font-mono text-midnight-400 mr-2">
+            <span className="text-xs font-mono text-zinc-400 mr-2">
               {activeIndex + 1} / {totalCards}
             </span>
             <button
               onClick={prevCard}
-              className="p-3 rounded-xl bg-midnight-900 hover:bg-midnight-850 border border-white/10 hover:border-lime-electric/50 text-midnight-300 hover:text-white transition-all active:scale-95 shadow-subtle-card"
+              className="p-3 rounded-full bg-[#12151E] hover:bg-[#1A1F2C] border border-white/20 hover:border-[#D7FF35]/60 text-zinc-300 hover:text-white transition-all active:scale-95 shadow-sm"
               title="Previous style (Left Arrow)"
               aria-label="Previous style"
             >
@@ -110,7 +110,7 @@ export const WarpCarousel: React.FC<WarpCarouselProps> = ({ onSelectStyle }) => 
             </button>
             <button
               onClick={nextCard}
-              className="p-3 rounded-xl bg-midnight-900 hover:bg-midnight-850 border border-white/10 hover:border-lime-electric/50 text-midnight-300 hover:text-white transition-all active:scale-95 shadow-subtle-card"
+              className="p-3 rounded-full bg-[#12151E] hover:bg-[#1A1F2C] border border-white/20 hover:border-[#D7FF35]/60 text-zinc-300 hover:text-white transition-all active:scale-95 shadow-sm"
               title="Next style (Right Arrow)"
               aria-label="Next style"
             >
@@ -244,7 +244,7 @@ export const WarpCarousel: React.FC<WarpCarouselProps> = ({ onSelectStyle }) => 
 
                 {/* Bottom: Action trigger */}
                 <div className="pt-3 border-t border-white/5 flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-midnight-400">
+                  <span className="text-[11px] font-mono text-zinc-400">
                     #{style.identity.catalogNumber.toString().padStart(2, '0')}
                   </span>
                   <button
@@ -252,10 +252,10 @@ export const WarpCarousel: React.FC<WarpCarouselProps> = ({ onSelectStyle }) => 
                       e.stopPropagation();
                       onSelectStyle(style.id);
                     }}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-midnight-800 hover:bg-lime-electric text-white hover:text-midnight-950 text-xs font-display font-semibold transition-all group"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#D7FF35] hover:bg-[#e4ff6b] text-[#080A08] text-xs font-sans font-bold shadow-[0_0_15px_-3px_rgba(215,255,53,0.35)] transition-all group"
                   >
                     <span>Transform in Arena</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#080A08] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform stroke-[2.5]" />
                   </button>
                 </div>
               </div>
@@ -271,8 +271,8 @@ export const WarpCarousel: React.FC<WarpCarouselProps> = ({ onSelectStyle }) => 
               onClick={() => setActiveIndex(i)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
                 i === activeIndex
-                  ? 'w-8 bg-lime-electric shadow-lime-glow/50'
-                  : 'w-2 bg-midnight-800 hover:bg-midnight-700'
+                  ? 'w-8 bg-[#D7FF35] shadow-[0_0_8px_#D7FF35]'
+                  : 'w-2 bg-[#12151E] hover:bg-zinc-700'
               }`}
               aria-label={`Go to slide ${i + 1}`}
             />

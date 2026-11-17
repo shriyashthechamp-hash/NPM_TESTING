@@ -95,7 +95,7 @@ module.exports = {
               onClick={() => setPackageManager(pm)}
               className={`px-3.5 py-1.5 rounded-lg transition-all uppercase ${
                 packageManager === pm
-                  ? 'bg-lime text-black font-bold shadow-sm'
+                  ? 'bg-[#D7FF35] text-[#080A08] font-black shadow-[0_0_15px_rgba(215,255,53,0.3)]'
                   : 'text-zinc-400 hover:text-white hover:bg-white/5'
               }`}
             >

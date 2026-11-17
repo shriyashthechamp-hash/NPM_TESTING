@@ -118,10 +118,10 @@ export const StyleCatalogExplorer: React.FC<StyleCatalogExplorerProps> = ({
         <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-2 md:pb-0">
           <button
             onClick={() => setSelectedFamily('all')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-colors ${
+            className={`px-3 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition-all ${
               selectedFamily === 'all'
-                ? 'bg-lime-electric text-midnight-950 font-bold'
-                : 'bg-midnight-900 text-midnight-400 hover:text-white'
+                ? 'bg-[#D7FF35] text-[#080A08] font-bold shadow-sm'
+                : 'bg-[#12151E] text-zinc-300 hover:text-white border border-white/10'
             }`}
           >
             All Families
@@ -130,10 +130,10 @@ export const StyleCatalogExplorer: React.FC<StyleCatalogExplorerProps> = ({
             <button
               key={fam.id}
               onClick={() => setSelectedFamily(fam.id)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-colors ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition-all ${
                 selectedFamily === fam.id
-                  ? 'bg-lime-electric text-midnight-950 font-bold'
-                  : 'bg-midnight-900 text-midnight-400 hover:text-white'
+                  ? 'bg-[#D7FF35] text-[#080A08] font-bold shadow-sm'
+                  : 'bg-[#12151E] text-zinc-300 hover:text-white border border-white/10'
               }`}
             >
               {fam.name}
@@ -143,15 +143,15 @@ export const StyleCatalogExplorer: React.FC<StyleCatalogExplorerProps> = ({
 
         {/* Maturity Filter */}
         <div className="flex items-center gap-1.5 text-xs font-mono self-end md:self-auto">
-          <span className="text-midnight-500">Maturity:</span>
+          <span className="text-zinc-400">Maturity:</span>
           {['all', 'VALIDATED', 'IMPLEMENTED', 'MODELED'].map((m) => (
             <button
               key={m}
               onClick={() => setSelectedMaturity(m)}
-              className={`px-2 py-1 rounded text-[11px] uppercase transition-colors ${
+              className={`px-2.5 py-1 rounded-lg text-[11px] uppercase transition-all ${
                 selectedMaturity === m
-                  ? 'bg-midnight-800 text-lime-electric border border-lime-electric/30 font-bold'
-                  : 'text-midnight-400 hover:text-white'
+                  ? 'bg-[#D7FF35] text-[#080A08] font-bold shadow-sm'
+                  : 'bg-[#12151E] text-zinc-400 hover:text-white border border-white/10'
               }`}
             >
               {m}
@@ -164,26 +164,25 @@ export const StyleCatalogExplorer: React.FC<StyleCatalogExplorerProps> = ({
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {filteredStyles.map((style) => {
           const family = getFamilyById(style.family);
-          const isImplemented = style.maturity === 'VALIDATED' || style.maturity === 'IMPLEMENTED';
 
           return (
             <div
               key={style.id}
-              className="rounded-2xl border border-white/5 bg-midnight-900/50 hover:bg-midnight-900/90 hover:border-white/15 p-5 flex flex-col justify-between transition-all group shadow-subtle-card hover:-translate-y-1"
+              className="rounded-2xl border border-white/10 bg-[#0D1017]/80 hover:bg-[#12151E] hover:border-white/20 p-5 flex flex-col justify-between transition-all group shadow-subtle-card hover:-translate-y-1"
             >
               <div>
                 {/* Header: Family & Catalog # & Status */}
                 <div className="flex items-center justify-between text-xs font-mono mb-3">
-                  <span className="text-midnight-500">
+                  <span className="text-zinc-400">
                     #{style.identity.catalogNumber.toString().padStart(2, '0')} · {family?.name || style.family}
                   </span>
                   <span
                     className={`text-[9px] font-mono px-2 py-0.5 rounded-full font-bold uppercase ${
                       style.maturity === 'VALIDATED'
-                        ? 'bg-lime-electric/15 text-lime-electric border border-lime-electric/30'
+                        ? 'bg-[#D7FF35]/20 text-[#D7FF35] border border-[#D7FF35]/40'
                         : style.maturity === 'IMPLEMENTED'
                         ? 'bg-cobalt-bright/15 text-cobalt-glow border border-cobalt-bright/30'
-                        : 'bg-white/5 text-midnight-400 border border-white/10'
+                        : 'bg-white/5 text-zinc-400 border border-white/10'
                     }`}
                   >
                     {style.maturity}
@@ -191,10 +190,10 @@ export const StyleCatalogExplorer: React.FC<StyleCatalogExplorerProps> = ({
                 </div>
 
                 {/* Style Title & Tagline */}
-                <h3 className="text-xl font-display font-extrabold text-white tracking-tight mb-2 group-hover:text-lime-electric transition-colors">
+                <h3 className="text-xl font-sans font-extrabold text-white tracking-tight mb-2 group-hover:text-[#D7FF35] transition-colors">
                   {style.name}
                 </h3>
-                <p className="text-xs text-midnight-300 line-clamp-2 leading-relaxed mb-4">
+                <p className="text-xs text-zinc-300 line-clamp-2 leading-relaxed mb-4">
                   {style.identity.tagline}
                 </p>
 
@@ -220,28 +219,28 @@ export const StyleCatalogExplorer: React.FC<StyleCatalogExplorerProps> = ({
                     style={{ backgroundColor: style.color.palette.surface }}
                     title={`Surface: ${style.color.palette.surface}`}
                   />
-                  <span className="text-[10px] font-mono text-midnight-500 ml-1">
+                  <span className="text-[10px] font-mono text-zinc-400 ml-1">
                     {style.surfaces.style}
                   </span>
                 </div>
               </div>
 
-              {/* Bottom Card Actions */}
-              <div className="pt-3 border-t border-white/5 flex items-center justify-between gap-2">
+              {/* Bottom Card Actions — Primary Electric Lime Transform */}
+              <div className="pt-3 border-t border-white/10 flex items-center justify-between gap-2">
                 <button
                   onClick={() => setActiveModalStyleId(style.id)}
-                  className="text-xs text-midnight-300 hover:text-white font-mono flex items-center gap-1 py-1"
+                  className="px-3 py-1.5 rounded-full bg-[#12151E] hover:bg-[#1A1F2C] border border-white/15 text-xs text-zinc-300 hover:text-white font-mono flex items-center gap-1.5 transition-all"
                 >
-                  <Info className="w-3.5 h-3.5 text-lime-electric" />
+                  <Info className="w-3.5 h-3.5 text-[#D7FF35]" />
                   <span>Inspect DNA</span>
                 </button>
 
                 <button
                   onClick={() => onSelectStyleForArena(style.id)}
-                  className="px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-lime text-white hover:text-black text-xs font-bold font-sans flex items-center gap-1.5 transition-all group/btn shadow-sm"
+                  className="px-4 py-1.5 rounded-full bg-[#D7FF35] hover:bg-[#e4ff6b] text-[#080A08] text-xs font-bold font-sans flex items-center gap-1.5 transition-all group/btn shadow-[0_0_15px_-3px_rgba(215,255,53,0.35)]"
                 >
                   <span>Transform</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#080A08] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </button>
               </div>
             </div>
@@ -433,9 +432,9 @@ export const StyleCatalogExplorer: React.FC<StyleCatalogExplorerProps> = ({
                   onOpenPromptForgeWithStyle(activeDocModel.id);
                   setActiveModalStyleId(null);
                 }}
-                className="px-4 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white text-xs font-sans font-semibold transition-colors flex items-center gap-1.5"
+                className="px-5 py-2.5 rounded-full bg-[#12151E] hover:bg-[#1A1F2C] border border-white/20 hover:border-white/40 text-white text-xs font-sans font-bold transition-all flex items-center gap-1.5 shadow-sm"
               >
-                <Sliders className="w-3.5 h-3.5" />
+                <Sliders className="w-3.5 h-3.5 text-zinc-300" />
                 <span>Forge AI Prompt</span>
               </button>
 
@@ -444,10 +443,10 @@ export const StyleCatalogExplorer: React.FC<StyleCatalogExplorerProps> = ({
                   onSelectStyleForArena(activeDocModel.id);
                   setActiveModalStyleId(null);
                 }}
-                className="px-5 py-2.5 rounded-full bg-lime hover:bg-[#e4ff6b] text-black text-xs font-sans font-bold shadow-[0_0_20px_-3px_rgba(215,255,53,0.4)] transition-all flex items-center gap-1.5"
+                className="px-6 py-2.5 rounded-full bg-[#D7FF35] hover:bg-[#e4ff6b] text-[#080A08] text-xs font-sans font-black shadow-[0_0_25px_-3px_rgba(215,255,53,0.5)] transition-all flex items-center gap-1.5"
               >
                 <span>Open in Transformation Arena</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#080A08] stroke-[2.5]" />
               </button>
             </div>
           </div>

@@ -142,15 +142,15 @@ export function FeatureCard() {
         </div>
 
         {/* Component Selector Tabs */}
-        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-midnight-900 border border-white/10">
+        <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-[#0D1017] border border-white/15">
           {(['button', 'badge', 'card'] as const).map((comp) => (
             <button
               key={comp}
               onClick={() => setSelectedComponent(comp)}
-              className={`px-4 py-2 rounded-lg text-xs font-mono uppercase font-bold transition-all ${
+              className={`px-4 py-2 rounded-xl text-xs font-mono uppercase font-bold transition-all ${
                 selectedComponent === comp
-                  ? 'bg-lime-electric text-midnight-950 shadow-lime-glow'
-                  : 'text-midnight-400 hover:text-white hover:bg-white/5'
+                  ? 'bg-[#D7FF35] text-[#080A08] shadow-[0_0_15px_-3px_rgba(215,255,53,0.4)]'
+                  : 'text-zinc-300 hover:text-white hover:bg-white/10'
               }`}
             >
               {comp}
@@ -462,10 +462,10 @@ export function FeatureCard() {
                 </span>
                 <button
                   onClick={handleCopyCode}
-                  className="p-1 text-midnight-400 hover:text-white flex items-center gap-1 text-xs font-mono"
+                  className="px-3 py-1 rounded-full bg-[#D7FF35] hover:bg-[#e4ff6b] text-[#080A08] flex items-center gap-1.5 text-xs font-mono font-bold shadow-sm transition-all"
                   title="Copy Code"
                 >
-                  {copiedCode ? <Check className="w-3.5 h-3.5 text-lime-electric" /> : <Copy className="w-3.5 h-3.5" />}
+                  {copiedCode ? <Check className="w-3.5 h-3.5 text-[#080A08]" /> : <Copy className="w-3.5 h-3.5 text-[#080A08]" />}
                   <span>{copiedCode ? 'Copied' : 'Copy'}</span>
                 </button>
               </div>
