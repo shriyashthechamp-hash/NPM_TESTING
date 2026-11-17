@@ -5,6 +5,24 @@ export default {
   theme: {
     extend: {
       colors: {
+        bg: '#000000',
+        text: '#ffffff',
+        muted: '#8e8e8e',
+        lime: {
+          DEFAULT: '#D7FF35',
+          electric: '#D7FF35',
+          glow: '#E2FF66',
+          dark: '#9AC600',
+          muted: 'rgba(215, 255, 53, 0.15)',
+        },
+        cobalt: {
+          DEFAULT: '#438BFF',
+          electric: '#438BFF',
+          bright: '#438BFF',
+          glow: '#60A5FA',
+          deep: '#1D4ED8',
+          muted: 'rgba(67, 139, 255, 0.15)',
+        },
         midnight: {
           950: '#07090D',
           900: '#0B0D13',
@@ -19,23 +37,11 @@ export default {
           200: '#CBD5E1',
           100: '#F1F5F9',
         },
-        lime: {
-          electric: '#D4FF32',
-          glow: '#E2FF66',
-          dark: '#9AC600',
-          muted: 'rgba(212, 255, 50, 0.15)',
-        },
-        cobalt: {
-          electric: '#2563EB',
-          bright: '#3B82F6',
-          glow: '#60A5FA',
-          deep: '#1D4ED8',
-          muted: 'rgba(37, 99, 235, 0.15)',
-        },
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        display: ['Syne', 'Cabinet Grotesk', 'Plus Jakarta Sans', 'sans-serif'],
+        sans: ['Inter', 'Segoe UI', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Inter', 'Syne', 'sans-serif'],
+        dot: ['"BubbledotICG-FinePos"', '"Geist Pixel Circle"', 'monospace'],
         mono: ['JetBrains Mono', 'Fira Code', 'ui-monospace', 'monospace'],
       },
       animation: {

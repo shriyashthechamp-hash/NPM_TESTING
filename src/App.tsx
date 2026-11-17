@@ -32,7 +32,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-midnight-950 text-midnight-100 flex flex-col font-sans selection:bg-lime-electric selection:text-midnight-950">
+    <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-lime selection:text-black">
       {/* Top Persistent Navigation */}
       <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
 

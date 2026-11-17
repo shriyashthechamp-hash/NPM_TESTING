@@ -1,5 +1,5 @@
 import React from 'react';
-import { UnlimitedDesignHero } from '../hero/UnlimitedDesignHero';
+import { CinematicHero } from '../hero/CinematicHero';
 import { WarpCarousel } from '../hero/WarpCarousel';
 import { ALL_FAMILIES, ALL_STYLES, getFamilyById } from '@peak_ui/react';
 import { ActiveTab } from '../../types';
@@ -34,10 +34,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({
 }) => {
   return (
     <div className="space-y-0">
-      {/* 1. Reference A Hero Section */}
-      <UnlimitedDesignHero
+      {/* 1. Cinematic Video Hero Section (Single Viewport) */}
+      <CinematicHero
         onEnterLab={() => setActiveTab('arena')}
         onExploreStyles={() => setActiveTab('explorer')}
+        onSelectStyleForArena={onSelectStyleForArena}
         setActiveTab={setActiveTab}
       />
 
